@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salami on Bkash</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        .big-salam {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .no-button {
+            font-size: 20px;
+            padding: 10px 20px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .yes-button {
+            font-size: 20px;
+            padding: 10px 20px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="big-salam">Assalamu Alaikum!</p>
+        <p>Will you give me Salami on Bkash?</p>
+        <div class="buttons">
+            <button class="yes-button" onclick="sendSalami()">Yes</button>
+            <button class="no-button" onclick="shrinkNo()">No</button>
+        </div>
+    </div>
+    <script>
+        let noButton = document.querySelector(".no-button");
+        let shrinkCount = 0;
+
+        function shrinkNo() {
+            shrinkCount++;
+            if (shrinkCount < 5) {
+                noButton.style.fontSize = (20 - shrinkCount * 4) + "px";
+                noButton.style.padding = (10 - shrinkCount * 2) + "px " + (20 - shrinkCount * 4) + "px";
+            } else {
+                noButton.remove();
+            }
+        }
+
+        function sendSalami() {
+            window.location.href = "https://bka.sh/01533672249";
+        }
+
+        window.onbeforeunload = function() {
+            return "You cannot leave without giving Salami!";
+        };
+    </script>
+</body>
+</html>
